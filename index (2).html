@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Sabharwal Sports — Premium Sports Equipment</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--black:#0a0a0a;--dark:#111;--dark2:#1a1a1a;--dark3:#222;--red:#e8210a;--red2:#ff3d1f;--red-dim:rgba(232,33,10,.15);--white:#fff;--off:#f5f5f0;--cream:#faf9f6;--text:#1a1a1a;--text-mid:#555;--text-light:#888;--border:#e0e0e0;--border-dark:#2a2a2a;--gold:#d4a017;--gold2:#f0c040;--pink:#d63384;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--text);font-family:'Barlow',sans-serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--dark);}::-webkit-scrollbar-thumb{background:var(--red);}
+a{text-decoration:none;color:inherit;}ul{list-style:none;}img{display:block;width:100%;height:100%;object-fit:cover;}
+
+/* TOPBAR */
+.topbar{background:var(--red);padding:9px 0;text-align:center;font-size:12px;letter-spacing:2px;color:#fff;font-weight:500;overflow:hidden;}
+.topbar-inner{display:inline-block;animation:marquee 25s linear infinite;white-space:nowrap;}
+@keyframes marquee{0%{transform:translateX(100vw);}100%{transform:translateX(-100%);}}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:300;background:#fff;border-bottom:2px solid var(--black);}
+.hdr{max-width:1400px;margin:0 auto;padding:0 40px;height:70px;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:12px;}
+.logo-mark{width:46px;height:46px;background:var(--red);clip-path:polygon(0 0,100% 0,100% 80%,80% 100%,0 100%);display:grid;place-items:center;font-size:22px;flex-shrink:0;}
+.logo-name{font-family:'Barlow Condensed',sans-serif;font-size:25px;font-weight:900;letter-spacing:3px;color:var(--black);text-transform:uppercase;line-height:1;}
+.logo-sub{font-size:8px;letter-spacing:5px;color:var(--text-light);text-transform:uppercase;margin-top:2px;}
+nav{display:flex;}
+.nv{padding:0 16px;height:70px;display:flex;align-items:center;font-size:11.5px;letter-spacing:2px;font-weight:600;text-transform:uppercase;color:var(--text);transition:color .2s;cursor:pointer;background:none;border:none;font-family:'Barlow',sans-serif;position:relative;}
+.nv::after{content:'';position:absolute;bottom:0;left:16px;right:16px;height:3px;background:var(--red);transform:scaleX(0);transition:transform .25s;}
+.nv:hover,.nv.active{color:var(--red);}
+.nv:hover::after,.nv.active::after{transform:scaleX(1);}
+.hdr-acts{display:flex;gap:10px;align-items:center;}
+.cart-btn{display:flex;align-items:center;gap:7px;background:var(--red);color:#fff;border:none;padding:10px 20px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:2px;font-weight:700;cursor:pointer;text-transform:uppercase;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));transition:background .2s;}
+.cart-btn:hover{background:#c01800;}
+.cc{background:#fff;color:var(--red);width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:900;}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:580px;overflow:hidden;background:var(--black);}
+.hero-bg{position:absolute;inset:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.42;animation:hzoom 14s ease-in-out infinite alternate;}
+@keyframes hzoom{from{transform:scale(1.04);}to{transform:scale(1.12);}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.28) 55%,rgba(232,33,10,.14) 100%);}
+.hero-cnt{position:relative;z-index:5;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 8vw;max-width:880px;}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;padding:6px 16px;font-size:9.5px;letter-spacing:4px;font-weight:700;text-transform:uppercase;margin-bottom:22px;width:fit-content;}
+.hero-h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(58px,9vw,125px);line-height:.87;color:#fff;text-transform:uppercase;letter-spacing:-1px;margin-bottom:22px;}
+.hero-h1 .rc{color:var(--red);}
+.hero-h1 .oc{-webkit-text-stroke:2px #fff;color:transparent;}
+.hero-p{font-size:15px;color:rgba(255,255,255,.65);line-height:1.75;max-width:460px;margin-bottom:38px;}
+.hero-btns{display:flex;gap:13px;flex-wrap:wrap;}
+.btn-r{padding:13px 34px;background:var(--red);color:#fff;border:none;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:3px;font-weight:700;text-transform:uppercase;cursor:pointer;clip-path:polygon(0 0,calc(100% - 11px) 0,100% 11px,100% 100%,11px 100%,0 calc(100% - 11px));transition:all .25s;}
+.btn-r:hover{background:#c01800;box-shadow:0 8px 28px rgba(232,33,10,.4);transform:translateY(-2px);}
+.btn-w{padding:13px 34px;background:transparent;color:#fff;border:2px solid rgba(255,255,255,.45);font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:3px;font-weight:700;text-transform:uppercase;cursor:pointer;transition:all .25s;}
+.btn-w:hover{border-color:#fff;background:rgba(255,255,255,.08);}
+.hero-stats{position:absolute;bottom:0;left:0;right:0;z-index:5;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.08);}
+.hst{padding:18px 28px;background:rgba(0,0,0,.62);backdrop-filter:blur(8px);border-right:1px solid rgba(255,255,255,.08);text-align:center;}
+.hst:last-child{border-right:none;}
+.hst-n{font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:900;color:var(--red);line-height:1;}
+.hst-l{font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.45);margin-top:3px;text-transform:uppercase;}
+
+/* SCROLL BAND */
+.band{background:var(--black);padding:12px 0;overflow:hidden;border-top:3px solid var(--red);}
+.band-track{display:flex;animation:sbscroll 22s linear infinite;width:max-content;}
+.band-item{display:flex;align-items:center;gap:10px;padding:0 36px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:4px;font-weight:700;color:#fff;text-transform:uppercase;white-space:nowrap;}
+.band-item span{color:var(--red);}
+@keyframes sbscroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* GENDER SPLIT */
+.gsplit{display:grid;grid-template-columns:1fr 1fr;height:58vh;min-height:380px;position:relative;}
+.gpanel{position:relative;overflow:hidden;cursor:pointer;}
+.gpanel img{width:100%;height:100%;object-fit:cover;transition:transform .6s;}
+.gpanel:hover img{transform:scale(1.06);}
+.gov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:38px;}
+.gpanel-m .gov{background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.18) 65%,transparent 100%);}
+.gpanel-f .gov{background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.18) 65%,transparent 100%);}
+.g-lbl{font-size:9px;letter-spacing:6px;color:var(--red);font-weight:700;text-transform:uppercase;margin-bottom:7px;}
+.g-title{font-family:'Barlow Condensed',sans-serif;font-size:54px;font-weight:900;color:#fff;text-transform:uppercase;line-height:.88;letter-spacing:-1px;margin-bottom:14px;}
+.g-count{font-size:12px;color:rgba(255,255,255,.55);letter-spacing:1px;margin-bottom:18px;}
+.g-cta{display:inline-flex;align-items:center;gap:7px;background:#fff;color:var(--black);padding:9px 20px;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:3px;font-weight:700;text-transform:uppercase;transition:all .3s;}
+.gpanel:hover .g-cta{background:var(--red);color:#fff;}
+.gdivider{position:absolute;top:0;bottom:0;left:50%;width:4px;background:var(--red);transform:translateX(-50%);z-index:5;}
+
+/* CATEGORIES */
+.cats-wrap{background:var(--off);padding:72px 0;}
+.cats-inner{max-width:1400px;margin:0 auto;padding:0 40px;}
+.cat-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:3px;margin-top:0;}
+.ccat{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:.75;}
+.ccat img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.ccat:hover img{transform:scale(1.09);}
+.ccat-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.08) 55%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:18px 14px;}
+.ccat-name{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:1px;line-height:1;}
+.ccat-n{font-size:9px;color:rgba(255,255,255,.55);letter-spacing:2px;margin-top:3px;}
+.ccat:hover .ccat-ov{background:linear-gradient(to top,rgba(232,33,10,.88) 0%,rgba(232,33,10,.08) 55%,transparent 100%);}
+
+/* SECTION TITLES */
+.sh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:44px;padding-bottom:18px;border-bottom:2px solid var(--black);}
+.sh-l .sh-ey{font-size:9.5px;letter-spacing:5px;color:var(--red);font-weight:700;text-transform:uppercase;margin-bottom:7px;}
+.sh-l .sh-t{font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,4vw,52px);font-weight:900;text-transform:uppercase;color:var(--black);line-height:.88;letter-spacing:-1px;}
+.sh-l .sh-t span{color:var(--red);}
+.sh-r{display:flex;gap:7px;}
+.fb{padding:7px 16px;border:2px solid var(--border);background:none;font-family:'Barlow',sans-serif;font-size:10px;letter-spacing:2px;font-weight:600;text-transform:uppercase;cursor:pointer;transition:all .2s;color:var(--text-mid);}
+.fb.active,.fb:hover{border-color:var(--red);color:var(--red);}
+
+/* PRODUCT CARDS */
+.pg{display:grid;gap:2px;}
+.pg4{grid-template-columns:repeat(4,1fr);}
+.pg5{grid-template-columns:repeat(5,1fr);}
+.pg3{grid-template-columns:repeat(3,1fr);}
+.pc{background:var(--cream);position:relative;overflow:hidden;}
+.pc:hover .pc-img img{transform:scale(1.07);}
+.pc-img{overflow:hidden;position:relative;background:#eeecea;}
+.pc-img img{transition:transform .4s;}
+.pc-h240 .pc-img{height:240px;}
+.pc-h220 .pc-img{height:220px;}
+.pc-h260 .pc-img{height:260px;}
+.pbadges{position:absolute;top:12px;left:12px;z-index:2;display:flex;flex-direction:column;gap:5px;}
+.pb{font-size:8.5px;letter-spacing:2px;font-weight:700;padding:3px 9px;text-transform:uppercase;}
+.pb-n{background:var(--black);color:#fff;}
+.pb-s{background:var(--red);color:#fff;}
+.pb-b{background:var(--gold);color:#fff;}
+.pb-p{background:#1a4d2e;color:#fff;}
+.pc-acts{position:absolute;bottom:12px;right:12px;z-index:2;display:flex;flex-direction:column;gap:5px;opacity:0;transform:translateX(9px);transition:all .3s;}
+.pc:hover .pc-acts{opacity:1;transform:translateX(0);}
+.pa{width:34px;height:34px;border:none;cursor:pointer;display:grid;place-items:center;font-size:15px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.13);transition:all .2s;}
+.pa:hover{background:var(--red);}
+.pc-info{padding:14px 16px 18px;}
+.pc-sport{font-size:8.5px;letter-spacing:3px;color:var(--red);font-weight:700;text-transform:uppercase;margin-bottom:4px;}
+.pc-name{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;color:var(--black);line-height:1.05;margin-bottom:5px;text-transform:uppercase;}
+.pc-brand{font-size:10.5px;color:var(--text-light);letter-spacing:1px;margin-bottom:8px;}
+.pc-rat{display:flex;align-items:center;gap:5px;margin-bottom:8px;}
+.stars{color:var(--gold);font-size:10.5px;letter-spacing:1px;}
+.rc{font-size:9.5px;color:var(--text-light);}
+.pc-price{display:flex;align-items:center;gap:8px;}
+.p-cur{font-family:'Barlow Condensed',sans-serif;font-size:21px;font-weight:700;color:var(--black);}
+.p-old{font-size:12px;color:var(--text-light);text-decoration:line-through;}
+.p-save{font-size:9.5px;color:var(--red);font-weight:700;letter-spacing:1px;}
+.pc-atc{width:100%;padding:10px;background:var(--black);color:#fff;border:none;font-family:'Barlow Condensed',sans-serif;font-size:11.5px;letter-spacing:3px;font-weight:700;text-transform:uppercase;cursor:pointer;margin-top:10px;transition:all .2s;opacity:0;transform:translateY(7px);}
+.pc:hover .pc-atc{opacity:1;transform:translateY(0);}
+.pc-atc:hover{background:var(--red);}
+
+/* FEATURED STRIP */
+.feat-wrap{background:var(--black);}
+.feat-in{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;}
+.feat-vis{position:relative;height:480px;overflow:hidden;}
+.feat-vis img{width:100%;height:100%;object-fit:cover;}
+.feat-tag{position:absolute;top:22px;left:22px;background:var(--red);color:#fff;font-size:8.5px;letter-spacing:4px;font-weight:700;padding:5px 13px;text-transform:uppercase;}
+.feat-ct{padding:56px 50px;display:flex;flex-direction:column;justify-content:center;background:var(--dark2);}
+.feat-ey{font-size:8.5px;letter-spacing:6px;color:var(--red);font-weight:700;text-transform:uppercase;margin-bottom:14px;}
+.feat-t{font-family:'Barlow Condensed',sans-serif;font-size:clamp(40px,4.5vw,66px);font-weight:900;color:#fff;text-transform:uppercase;line-height:.87;letter-spacing:-1px;margin-bottom:18px;}
+.feat-d{font-size:13.5px;color:rgba(255,255,255,.5);line-height:1.8;margin-bottom:28px;}
+.feat-specs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:32px;}
+.fspec{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:12px 14px;}
+.fspec-l{font-size:7.5px;letter-spacing:3px;color:rgba(255,255,255,.28);text-transform:uppercase;margin-bottom:4px;}
+.fspec-v{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:#fff;}
+.feat-price{display:flex;align-items:center;gap:14px;margin-bottom:26px;}
+.fp-cur{font-family:'Barlow Condensed',sans-serif;font-size:46px;font-weight:900;color:var(--red);line-height:1;}
+.fp-old{font-size:19px;color:rgba(255,255,255,.28);text-decoration:line-through;}
+
+/* DEAL */
+.deal{background:var(--red);padding:56px 40px;}
+.deal-in{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;gap:36px;align-items:center;}
+.deal-lbl{font-size:9px;letter-spacing:5px;font-weight:700;color:rgba(255,255,255,.65);text-transform:uppercase;margin-bottom:7px;}
+.deal-t{font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,4vw,58px);font-weight:900;color:#fff;text-transform:uppercase;line-height:.88;letter-spacing:-1px;margin-bottom:14px;}
+.timer{display:flex;gap:14px;align-items:center;}
+.tb{text-align:center;background:rgba(0,0,0,.22);padding:11px 14px;min-width:56px;}
+.tb-n{font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:900;color:#fff;line-height:1;display:block;}
+.tb-l{font-size:7.5px;letter-spacing:3px;color:rgba(255,255,255,.55);text-transform:uppercase;}
+.tsep{font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:900;color:rgba(255,255,255,.35);}
+.deal-vis{height:260px;overflow:hidden;}
+.deal-vis img{width:100%;height:100%;object-fit:cover;}
+.deal-r{text-align:right;}
+.deal-pb{display:inline-block;background:rgba(0,0,0,.22);padding:22px 28px;margin-bottom:20px;}
+.dp-cur{font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:900;color:#fff;line-height:1;}
+.dp-old{font-size:17px;color:rgba(255,255,255,.45);text-decoration:line-through;}
+
+/* GENDER SECTION HEADERS */
+.gh{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;margin-bottom:44px;padding-bottom:18px;border-bottom:3px solid var(--black);}
+.gi{width:60px;height:60px;display:grid;place-items:center;font-size:30px;}
+.gi-m{background:var(--black);}
+.gi-f{background:var(--pink);}
+.gh-lbl{font-size:8.5px;letter-spacing:5px;color:var(--red);font-weight:700;text-transform:uppercase;margin-bottom:5px;}
+.gh-t{font-family:'Barlow Condensed',sans-serif;font-size:46px;font-weight:900;text-transform:uppercase;color:var(--black);line-height:.88;letter-spacing:-1px;}
+.gh-t.female{color:var(--pink);}
+
+/* SUB HEADERS */
+.sub-h{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:var(--black);text-transform:uppercase;letter-spacing:2px;margin-bottom:22px;padding-left:14px;border-left:4px solid var(--red);display:flex;align-items:center;gap:10px;}
+.sub-h.female{border-left-color:var(--pink);}
+
+/* BRANDS */
+.brands-sec{background:var(--off);padding:46px 40px;border-top:2px solid var(--black);border-bottom:2px solid var(--black);}
+.brands-in{max-width:1400px;margin:0 auto;}
+.brands-ttl{font-size:9.5px;letter-spacing:5px;color:var(--text-light);font-weight:600;text-align:center;text-transform:uppercase;margin-bottom:28px;}
+.bg{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;border:1px solid var(--border);}
+.bb{padding:18px;display:grid;place-items:center;background:#fff;border-right:1px solid var(--border);transition:all .2s;cursor:pointer;}
+.bb:last-child{border-right:none;}
+.bb:hover{background:var(--red);}
+.bb-n{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:900;letter-spacing:3px;color:var(--text-mid);text-transform:uppercase;transition:color .2s;}
+.bb:hover .bb-n{color:#fff;}
+
+/* TESTIMONIALS */
+.testi-sec{background:var(--black);padding:72px 40px;}
+.testi-in{max-width:1400px;margin:0 auto;}
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.tc{background:var(--dark2);padding:30px;border-left:3px solid transparent;transition:all .3s;}
+.tc:hover{border-left-color:var(--red);background:var(--dark3);}
+.t-stars{color:var(--gold);font-size:13px;letter-spacing:2px;margin-bottom:14px;}
+.t-txt{font-size:13.5px;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:18px;font-style:italic;}
+.t-auth{display:flex;align-items:center;gap:11px;}
+.t-av{width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--dark3);}
+.t-name{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:#fff;text-transform:uppercase;}
+.t-sport{font-size:9.5px;color:var(--red);letter-spacing:2px;text-transform:uppercase;}
+
+/* NEWSLETTER */
+.nl-sec{background:var(--off);padding:68px 40px;border-top:2px solid var(--black);}
+.nl-in{max-width:680px;margin:0 auto;text-align:center;}
+.nl-ey{font-size:9.5px;letter-spacing:5px;color:var(--red);font-weight:700;text-transform:uppercase;margin-bottom:10px;}
+.nl-t{font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,4vw,52px);font-weight:900;text-transform:uppercase;color:var(--black);line-height:.88;letter-spacing:-1px;margin-bottom:14px;}
+.nl-d{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:28px;}
+.nl-form{display:flex;max-width:480px;margin:0 auto;}
+.nl-inp{flex:1;padding:13px 18px;border:2px solid var(--black);border-right:none;font-family:'Barlow',sans-serif;font-size:12px;outline:none;background:#fff;}
+.nl-inp:focus{border-color:var(--red);}
+.nl-btn{padding:13px 26px;background:var(--red);color:#fff;border:2px solid var(--red);font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:2px;font-weight:700;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background .2s;}
+.nl-btn:hover{background:#c01800;}
+
+/* FOOTER */
+footer{background:var(--black);color:#fff;padding:56px 40px 0;}
+.ft-in{max-width:1400px;margin:0 auto;}
+.ft-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:44px;padding-bottom:44px;border-bottom:1px solid var(--border-dark);}
+.ft-bn{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;letter-spacing:3px;color:#fff;text-transform:uppercase;margin-bottom:7px;}
+.ft-bsub{font-size:9px;letter-spacing:3px;color:rgba(255,255,255,.28);text-transform:uppercase;margin-bottom:14px;}
+.ft-desc{font-size:12.5px;color:rgba(255,255,255,.38);line-height:1.8;margin-bottom:22px;}
+.soc{display:flex;gap:8px;}
+.sb{width:34px;height:34px;border:1px solid rgba(255,255,255,.13);display:grid;place-items:center;font-size:13px;cursor:pointer;transition:all .2s;}
+.sb:hover{background:var(--red);border-color:var(--red);}
+.ft-ct{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:2px;color:#fff;text-transform:uppercase;margin-bottom:18px;padding-bottom:9px;border-bottom:1px solid rgba(255,255,255,.07);}
+.ft-lk{display:flex;flex-direction:column;gap:9px;}
+.ft-lk a{font-size:11.5px;color:rgba(255,255,255,.38);letter-spacing:1px;transition:color .2s;cursor:pointer;}
+.ft-lk a:hover{color:var(--red);}
+.ft-bot{padding:18px 0;display:flex;justify-content:space-between;align-items:center;font-size:10.5px;color:rgba(255,255,255,.22);letter-spacing:1px;}
+.ft-bot-r{display:flex;gap:14px;}
+
+/* TOAST */
+.toast{position:fixed;bottom:22px;right:22px;z-index:9999;background:var(--black);color:#fff;padding:13px 20px;font-family:'Barlow Condensed',sans-serif;font-size:13.5px;letter-spacing:2px;font-weight:700;text-transform:uppercase;border-left:4px solid var(--red);transform:translateX(130%);transition:transform .3s;max-width:280px;}
+.toast.show{transform:translateX(0);}
+
+/* SECTION SPACING */
+.sec{padding:72px 40px;max-width:1400px;margin:0 auto;}
+.sec-full{padding:72px 0;}
+
+@media(max-width:1100px){.pg4{grid-template-columns:repeat(3,1fr);}.pg5{grid-template-columns:repeat(3,1fr);}.cat-grid{grid-template-columns:repeat(3,1fr);}.ft-top{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.hdr{padding:0 18px;}nav{display:none;}.hero-h1{font-size:clamp(48px,13vw,75px);}.hero-stats{grid-template-columns:1fr 1fr;}.gsplit{grid-template-columns:1fr;}.pg4,.pg5,.pg3{grid-template-columns:repeat(2,1fr);}.cat-grid{grid-template-columns:repeat(2,1fr);}.feat-in{grid-template-columns:1fr;}.deal-in{grid-template-columns:1fr;}.deal-vis,.deal-r{display:none;}.bg{grid-template-columns:repeat(3,1fr);}.tg{grid-template-columns:1fr;}.ft-top{grid-template-columns:1fr;}.sec,.brands-sec,.nl-sec,.testi-sec,.deal{padding-left:18px;padding-right:18px;}.sec{padding:52px 18px;}}
+</style>
+</head>
+<body>
+
+<div class="toast" id="toast">Added to cart!</div>
+
+<!-- TOPBAR -->
+<div class="topbar"><div class="topbar-inner">🏆 FREE SHIPPING ON ORDERS ABOVE ₹999 &nbsp;&nbsp;&nbsp; ⚡ MEGA SALE — UP TO 50% OFF &nbsp;&nbsp;&nbsp; 🎽 NEW: CRICKET WORLD CUP EDITION GEAR &nbsp;&nbsp;&nbsp; 🏅 50,000+ ATHLETES TRUST SABHARWAL SPORTS &nbsp;&nbsp;&nbsp; 🔥 GENUINE PRODUCTS. GUARANTEED. &nbsp;&nbsp;&nbsp; 🏆 FREE SHIPPING ON ORDERS ABOVE ₹999 &nbsp;&nbsp;&nbsp; ⚡ MEGA SALE — UP TO 50% OFF &nbsp;&nbsp;&nbsp;</div></div>
+
+<!-- HEADER -->
+<header>
+  <div class="hdr">
+    <div class="logo">
+      <div class="logo-mark">🏆</div>
+      <div><div class="logo-name">Sabharwal Sports</div><div class="logo-sub">Premium Equipment Since 1987</div></div>
+    </div>
+    <nav>
+      <button class="nv active" onclick="scrollTo(0,0)">Home</button>
+      <button class="nv" onclick="document.getElementById('all-sports').scrollIntoView({behavior:'smooth'})">All Sports</button>
+      <button class="nv" onclick="document.getElementById('mens').scrollIntoView({behavior:'smooth'})">Men</button>
+      <button class="nv" onclick="document.getElementById('womens').scrollIntoView({behavior:'smooth'})">Women</button>
+      <button class="nv" onclick="document.getElementById('brands').scrollIntoView({behavior:'smooth'})">Brands</button>
+    </nav>
+    <div class="hdr-acts">
+      <button class="cart-btn">🛒 Cart <span class="cc" id="ccount">0</span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=1600&q=80&auto=format&fit=crop" alt="Hero"/></div>
+  <div class="hero-ov"></div>
+  <div class="hero-cnt">
+    <div class="hero-badge">🏆 India's #1 Sports Store</div>
+    <h1 class="hero-h1">GEAR UP<br/><span class="oc">FOR</span><br/><span class="rc">GREATNESS</span></h1>
+    <p class="hero-p">From cricket fields to yoga studios, swimming pools to football grounds — Sabharwal Sports equips champions since 1987.</p>
+    <div class="hero-btns">
+      <button class="btn-r" onclick="document.getElementById('all-sports').scrollIntoView({behavior:'smooth'})">SHOP ALL SPORTS</button>
+      <button class="btn-w" onclick="document.getElementById('mens').scrollIntoView({behavior:'smooth'})">VIEW COLLECTIONS</button>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hst"><div class="hst-n">50K+</div><div class="hst-l">Athletes Served</div></div>
+    <div class="hst"><div class="hst-n">200+</div><div class="hst-l">Sports Products</div></div>
+    <div class="hst"><div class="hst-n">35+</div><div class="hst-l">Top Brands</div></div>
+    <div class="hst"><div class="hst-n">37yr</div><div class="hst-l">Of Excellence</div></div>
+  </div>
+</section>
+
+<!-- BAND -->
+<div class="band">
+  <div class="band-track">
+    <div class="band-item"><span>⚡</span>CRICKET</div><div class="band-item"><span>⚡</span>FOOTBALL</div><div class="band-item"><span>⚡</span>BADMINTON</div><div class="band-item"><span>⚡</span>SWIMMING</div><div class="band-item"><span>⚡</span>TENNIS</div><div class="band-item"><span>⚡</span>ATHLETICS</div><div class="band-item"><span>⚡</span>BASKETBALL</div><div class="band-item"><span>⚡</span>BOXING</div><div class="band-item"><span>⚡</span>YOGA</div><div class="band-item"><span>⚡</span>GYM FITNESS</div><div class="band-item"><span>⚡</span>TABLE TENNIS</div><div class="band-item"><span>⚡</span>HOCKEY</div>
+    <div class="band-item"><span>⚡</span>CRICKET</div><div class="band-item"><span>⚡</span>FOOTBALL</div><div class="band-item"><span>⚡</span>BADMINTON</div><div class="band-item"><span>⚡</span>SWIMMING</div><div class="band-item"><span>⚡</span>TENNIS</div><div class="band-item"><span>⚡</span>ATHLETICS</div><div class="band-item"><span>⚡</span>BASKETBALL</div><div class="band-item"><span>⚡</span>BOXING</div><div class="band-item"><span>⚡</span>YOGA</div><div class="band-item"><span>⚡</span>GYM FITNESS</div><div class="band-item"><span>⚡</span>TABLE TENNIS</div><div class="band-item"><span>⚡</span>HOCKEY</div>
+  </div>
+</div>
+
+<!-- GENDER SPLIT -->
+<div style="position:relative;">
+  <div class="gsplit">
+    <div class="gpanel gpanel-m" onclick="document.getElementById('mens').scrollIntoView({behavior:'smooth'})">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=80&auto=format&fit=crop" alt="Men Sports"/>
+      <div class="gov"><div class="g-lbl">Explore Collection</div><div class="g-title">MEN'S<br/>GEAR</div><div class="g-count">120+ Products Available</div><div class="g-cta">SHOP MEN →</div></div>
+    </div>
+    <div class="gpanel gpanel-f" onclick="document.getElementById('womens').scrollIntoView({behavior:'smooth'})">
+      <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=900&q=80&auto=format&fit=crop" alt="Women Sports"/>
+      <div class="gov"><div class="g-lbl">Explore Collection</div><div class="g-title">WOMEN'S<br/>GEAR</div><div class="g-count">95+ Products Available</div><div class="g-cta">SHOP WOMEN →</div></div>
+    </div>
+  </div>
+  <div class="gdivider"></div>
+</div>
+
+<!-- ALL SPORTS CATEGORIES -->
+<div class="cats-wrap" id="all-sports">
+  <div class="cats-inner">
+    <div class="sh">
+      <div class="sh-l"><div class="sh-ey">Browse By Sport</div><div class="sh-t">ALL <span>SPORTS</span> CATEGORIES</div></div>
+      <div class="sh-r"><button class="fb active">All</button><button class="fb">Outdoor</button><button class="fb">Indoor</button><button class="fb">Fitness</button></div>
+    </div>
+  </div>
+  <div class="cat-grid" style="margin:0 40px;">
+    <div class="ccat"><img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=500&q=80&auto=format&fit=crop" alt="Cricket"/><div class="ccat-ov"><div class="ccat-name">CRICKET</div><div class="ccat-n">48 Products</div></div></div>
+    <div class="ccat"><img src="https://images.unsplash.com/photo-1551958219-acbc595b5ec9?w=500&q=80&auto=format&fit=crop" alt="Football"/><div class="ccat-ov"><div class="ccat-name">FOOTBALL</div><div class="ccat-n">36 Products</div></div></div>
+    <div class="ccat"><img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=500&q=80&auto=format&fit=crop" alt="Badminton"/><div class="ccat-ov"><div class="ccat-name">BADMINTON</div><div class="ccat-n">29 Products</div></div></div>
+    <div class="ccat"><img src="https://images.unsplash.com/photo-1600679472829-3044539ce8ed?w=500&q=80&auto=format&fit=crop" alt="Swimming"/><div class="ccat-ov"><div class="ccat-name">SWIMMING</div><div class="ccat-n">24 Products</div></div></div>
+    <div class="ccat"><img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=500&q=80&auto=format&fit=crop" alt="Tennis"/><div class="ccat-ov"><div class="ccat-name">TENNIS</div><div class="ccat-n">22 Products</div></div></div>
+    <div class="ccat"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80&auto=format&fit=crop" alt="Gym"/><div class="ccat-ov"><div class="ccat-name">GYM & FITNESS</div><div class="ccat-n">55 Products</div></div></div>
+    <div class="ccat"><img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=500&q=80&auto=format&fit=crop" alt="Basketball"/><div class="ccat-ov"><div class="ccat-name">BASKETBALL</div><div class="ccat-n">18 Products</div></div></div>
+    <div class="ccat"><img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=500&q=80&auto=format&fit=crop" alt="Boxing"/><div class="ccat-ov"><div class="ccat-name">BOXING</div><div class="ccat-n">20 Products</div></div></div>
+    <div class="ccat"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500&q=80&auto=format&fit=crop" alt="Yoga"/><div class="ccat-ov"><div class="ccat-name">YOGA</div><div class="ccat-n">32 Products</div></div></div>
+    <div class="ccat"><img src="https://images.unsplash.com/photo-1595435742656-5272d0b3fa82?w=500&q=80&auto=format&fit=crop" alt="Running"/><div class="ccat-ov"><div class="ccat-name">RUNNING</div><div class="ccat-n">41 Products</div></div></div>
+    <div class="ccat"><img src="https://images.unsplash.com/photo-1580748142113-b258e47e2f5e?w=500&q=80&auto=format&fit=crop" alt="Table Tennis"/><div class="ccat-ov"><div class="ccat-name">TABLE TENNIS</div><div class="ccat-n">16 Products</div></div></div>
+    <div class="ccat"><img src="https://images.unsplash.com/photo-1589487391730-58f20eb2c308?w=500&q=80&auto=format&fit=crop" alt="Hockey"/><div class="ccat-ov"><div class="ccat-name">HOCKEY</div><div class="ccat-n">19 Products</div></div></div>
+  </div>
+</div>
+
+<!-- BESTSELLERS -->
+<div class="sec">
+  <div class="sh">
+    <div class="sh-l"><div class="sh-ey">Top Picks</div><div class="sh-t">BESTSELLING <span>PRODUCTS</span></div></div>
+    <div class="sh-r"><button class="fb active" onclick="filt('all',this)">All</button><button class="fb" onclick="filt('cricket',this)">Cricket</button><button class="fb" onclick="filt('football',this)">Football</button><button class="fb" onclick="filt('fitness',this)">Fitness</button></div>
+  </div>
+  <div class="pg pg4" id="bsellers">
+    <div class="pc pc-h240" data-c="cricket"><div class="pc-img"><img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-b">BESTSELLER</span></div><div class="pc-acts"><button class="pa">♡</button><button class="pa">👁</button></div></div><div class="pc-info"><div class="pc-sport">CRICKET</div><div class="pc-name">SS Ton Kashmir Willow Bat</div><div class="pc-brand">SS / Sunridges</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(284)</span></div><div class="pc-price"><span class="p-cur">₹2,499</span><span class="p-old">₹3,200</span><span class="p-save">22% OFF</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+    <div class="pc pc-h240" data-c="football"><div class="pc-img"><img src="https://images.unsplash.com/photo-1614632537190-23e4006498ab?w=600&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-n">NEW</span></div><div class="pc-acts"><button class="pa">♡</button><button class="pa">👁</button></div></div><div class="pc-info"><div class="pc-sport">FOOTBALL</div><div class="pc-name">Nike Flight Pro Football</div><div class="pc-brand">Nike</div><div class="pc-rat"><span class="stars">★★★★☆</span><span class="rc">(192)</span></div><div class="pc-price"><span class="p-cur">₹1,899</span><span class="p-old">₹2,400</span><span class="p-save">21% OFF</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+    <div class="pc pc-h240" data-c="cricket"><div class="pc-img"><img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=600&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-p">PRO</span></div><div class="pc-acts"><button class="pa">♡</button><button class="pa">👁</button></div></div><div class="pc-info"><div class="pc-sport">BADMINTON</div><div class="pc-name">Yonex Astrox 88S Racket</div><div class="pc-brand">Yonex</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(437)</span></div><div class="pc-price"><span class="p-cur">₹7,990</span><span class="p-old">₹9,500</span><span class="p-save">16% OFF</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+    <div class="pc pc-h240" data-c="fitness"><div class="pc-img"><img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-s">SALE</span></div><div class="pc-acts"><button class="pa">♡</button><button class="pa">👁</button></div></div><div class="pc-info"><div class="pc-sport">GYM & FITNESS</div><div class="pc-name">Hex Rubber Dumbbell Set</div><div class="pc-brand">Kore Fitness</div><div class="pc-rat"><span class="stars">★★★★☆</span><span class="rc">(318)</span></div><div class="pc-price"><span class="p-cur">₹3,299</span><span class="p-old">₹4,500</span><span class="p-save">27% OFF</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+    <div class="pc pc-h240" data-c="fitness"><div class="pc-img"><img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=600&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-b">BESTSELLER</span></div><div class="pc-acts"><button class="pa">♡</button><button class="pa">👁</button></div></div><div class="pc-info"><div class="pc-sport">TENNIS</div><div class="pc-name">Wilson Blade 98 V8 Racket</div><div class="pc-brand">Wilson</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(256)</span></div><div class="pc-price"><span class="p-cur">₹12,500</span><span class="p-old">₹15,000</span><span class="p-save">17% OFF</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+    <div class="pc pc-h240" data-c="fitness"><div class="pc-img"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-n">NEW</span></div><div class="pc-acts"><button class="pa">♡</button><button class="pa">👁</button></div></div><div class="pc-info"><div class="pc-sport">RUNNING</div><div class="pc-name">Adidas Ultraboost 23</div><div class="pc-brand">Adidas</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(589)</span></div><div class="pc-price"><span class="p-cur">₹14,999</span><span class="p-old">₹18,000</span><span class="p-save">17% OFF</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+    <div class="pc pc-h240" data-c="football"><div class="pc-img"><img src="https://images.unsplash.com/photo-1582552938357-32b906df40cb?w=600&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-p">PRO</span></div><div class="pc-acts"><button class="pa">♡</button><button class="pa">👁</button></div></div><div class="pc-info"><div class="pc-sport">BOXING</div><div class="pc-name">Everlast Pro Elite Gloves</div><div class="pc-brand">Everlast</div><div class="pc-rat"><span class="stars">★★★★☆</span><span class="rc">(147)</span></div><div class="pc-price"><span class="p-cur">₹4,299</span><span class="p-old">₹5,500</span><span class="p-save">22% OFF</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+    <div class="pc pc-h240" data-c="cricket"><div class="pc-img"><img src="https://images.unsplash.com/photo-1600679472829-3044539ce8ed?w=600&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-s">SALE</span></div><div class="pc-acts"><button class="pa">♡</button><button class="pa">👁</button></div></div><div class="pc-info"><div class="pc-sport">SWIMMING</div><div class="pc-name">Speedo Fastskin Elite Goggle</div><div class="pc-brand">Speedo</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(203)</span></div><div class="pc-price"><span class="p-cur">₹1,299</span><span class="p-old">₹1,800</span><span class="p-save">28% OFF</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+  </div>
+</div>
+
+<!-- FEATURED PRODUCT -->
+<div class="feat-wrap">
+  <div class="feat-in">
+    <div class="feat-vis"><img src="https://images.unsplash.com/photo-1556906781-9a412961a28b?w=800&q=80&auto=format&fit=crop" alt="Nike"/><div class="feat-tag">FEATURED DROP</div></div>
+    <div class="feat-ct">
+      <div class="feat-ey">⚡ LIMITED EDITION</div>
+      <div class="feat-t">NIKE AIR<br/>ZOOM<br/>VICTORY</div>
+      <div class="feat-d">Engineered for elite performance. React foam midsole with carbon fibre plate for explosive propulsion on every stride.</div>
+      <div class="feat-specs">
+        <div class="fspec"><div class="fspec-l">Upper Material</div><div class="fspec-v">Flyknit Mesh</div></div>
+        <div class="fspec"><div class="fspec-l">Midsole</div><div class="fspec-v">React Foam + ZoomX</div></div>
+        <div class="fspec"><div class="fspec-l">Weight</div><div class="fspec-v">196g (US 9)</div></div>
+        <div class="fspec"><div class="fspec-l">Drop</div><div class="fspec-v">6mm Heel-Toe</div></div>
+      </div>
+      <div class="feat-price"><span class="fp-cur">₹16,999</span><span class="fp-old">₹22,000</span></div>
+      <button class="btn-r" onclick="atc()">ADD TO CART — 23% OFF</button>
+    </div>
+  </div>
+</div>
+
+<!-- DEAL OF DAY -->
+<div class="deal">
+  <div class="deal-in">
+    <div>
+      <div class="deal-lbl">⏰ Today Only</div>
+      <div class="deal-t">DEAL OF<br/>THE DAY</div>
+      <div class="timer">
+        <div class="tb"><span class="tb-n" id="th">08</span><span class="tb-l">Hours</span></div>
+        <div class="tsep">:</div>
+        <div class="tb"><span class="tb-n" id="tm">45</span><span class="tb-l">Mins</span></div>
+        <div class="tsep">:</div>
+        <div class="tb"><span class="tb-n" id="ts">30</span><span class="tb-l">Secs</span></div>
+      </div>
+    </div>
+    <div class="deal-vis"><img src="https://images.unsplash.com/photo-1578763363228-6e8428de69b2?w=600&q=80&auto=format&fit=crop" alt="Deal"/></div>
+    <div class="deal-r">
+      <div class="deal-pb"><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.6);margin-bottom:4px;">40% OFF TODAY</div><div class="dp-cur">₹2,199</div><div class="dp-old">₹3,699</div></div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:7px;text-transform:uppercase;">Puma Cricket Spikes</div>
+      <div style="font-size:12.5px;color:rgba(255,255,255,.55);margin-bottom:18px;line-height:1.6;">Professional cricket spikes with reinforced toe box and superior grip for all pitch conditions.</div>
+      <button style="background:#fff;color:var(--red);border:none;padding:13px 30px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,9px 100%,0 calc(100% - 9px));" onclick="atc()">GRAB THE DEAL</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MEN'S SECTION ============ -->
+<section id="mens">
+<div class="sec">
+  <div class="gh">
+    <div class="gi gi-m"><span style="color:#fff;font-size:30px;">♂</span></div>
+    <div><div class="gh-lbl">Engineered For Performance</div><div class="gh-t">MEN'S SPORTS COLLECTION</div></div>
+  </div>
+
+  <!-- Cricket Men -->
+  <div style="margin-bottom:52px;">
+    <div class="sub-h">🏏 Cricket Equipment — Men</div>
+    <div class="pg pg5">
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-p">PRO</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">CRICKET</div><div class="pc-name">SG English Willow Bat</div><div class="pc-brand">SG Sports</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(312)</span></div><div class="pc-price"><span class="p-cur">₹8,499</span><span class="p-old">₹10,000</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-n">NEW</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">CRICKET</div><div class="pc-name">Kookaburra Pro Helmet</div><div class="pc-brand">Kookaburra</div><div class="pc-rat"><span class="stars">★★★★☆</span><span class="rc">(198)</span></div><div class="pc-price"><span class="p-cur">₹3,999</span><span class="p-old">₹5,200</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-b">BEST</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">CRICKET</div><div class="pc-name">SS Leather Cricket Gloves</div><div class="pc-brand">SS Ton</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(156)</span></div><div class="pc-price"><span class="p-cur">₹1,299</span><span class="p-old">₹1,800</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1578763363228-6e8428de69b2?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">CRICKET</div><div class="pc-name">Adidas Adipower Cricket Shoes</div><div class="pc-brand">Adidas</div><div class="pc-rat"><span class="stars">★★★★☆</span><span class="rc">(221)</span></div><div class="pc-price"><span class="p-cur">₹5,499</span><span class="p-old">₹7,000</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-s">SALE</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">CRICKET</div><div class="pc-name">Men's Full Cricket Kit</div><div class="pc-brand">DSP</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(89)</span></div><div class="pc-price"><span class="p-cur">₹12,499</span><span class="p-old">₹18,000</span><span class="p-save">31% OFF</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+    </div>
+  </div>
+
+  <!-- Football Men -->
+  <div style="margin-bottom:52px;">
+    <div class="sub-h">⚽ Football Equipment — Men</div>
+    <div class="pg pg5">
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1614632537190-23e4006498ab?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-b">BESTSELLER</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">FOOTBALL</div><div class="pc-name">Adidas Champions League Ball</div><div class="pc-brand">Adidas</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(445)</span></div><div class="pc-price"><span class="p-cur">₹2,799</span><span class="p-old">₹3,500</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1556906781-9a412961a28b?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-n">NEW</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">FOOTBALL</div><div class="pc-name">Nike Mercurial Vapor 15</div><div class="pc-brand">Nike</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(312)</span></div><div class="pc-price"><span class="p-cur">₹8,999</span><span class="p-old">₹12,000</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1551958219-acbc595b5ec9?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">FOOTBALL</div><div class="pc-name">Puma Ultra Pro Shin Guards</div><div class="pc-brand">Puma</div><div class="pc-rat"><span class="stars">★★★★☆</span><span class="rc">(167)</span></div><div class="pc-price"><span class="p-cur">₹899</span><span class="p-old">₹1,200</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-p">PRO</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">FOOTBALL</div><div class="pc-name">Men's Football Jersey</div><div class="pc-brand">Nivia</div><div class="pc-rat"><span class="stars">★★★★☆</span><span class="rc">(203)</span></div><div class="pc-price"><span class="p-cur">₹799</span><span class="p-old">₹1,100</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-s">SALE</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">FOOTBALL</div><div class="pc-name">Reusch Attrakt GK Gloves</div><div class="pc-brand">Reusch</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(88)</span></div><div class="pc-price"><span class="p-cur">₹2,499</span><span class="p-old">₹3,200</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+    </div>
+  </div>
+
+  <!-- Gym Men -->
+  <div style="margin-bottom:52px;">
+    <div class="sub-h">💪 Gym & Fitness — Men</div>
+    <div class="pg pg4">
+      <div class="pc pc-h260"><div class="pc-img"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-b">BESTSELLER</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">GYM & FITNESS</div><div class="pc-name">Kore Vinyl 20kg Dumbbell Set</div><div class="pc-brand">Kore Fitness</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(398)</span></div><div class="pc-price"><span class="p-cur">₹2,599</span><span class="p-old">₹3,500</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h260"><div class="pc-img"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-p">PRO</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">GYM & FITNESS</div><div class="pc-name">Olympic Barbell 20kg</div><div class="pc-brand">PowerGear</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(132)</span></div><div class="pc-price"><span class="p-cur">₹8,999</span><span class="p-old">₹11,000</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h260"><div class="pc-img"><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-s">SALE</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">GYM & FITNESS</div><div class="pc-name">Cast Iron Kettlebell 16kg</div><div class="pc-brand">Kore Fitness</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(201)</span></div><div class="pc-price"><span class="p-cur">₹1,799</span><span class="p-old">₹2,500</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h260"><div class="pc-img"><img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=500&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-b">BESTSELLER</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">BASKETBALL</div><div class="pc-name">Spalding NBA Street Ball</div><div class="pc-brand">Spalding</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(289)</span></div><div class="pc-price"><span class="p-cur">₹2,299</span><span class="p-old">₹3,000</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+    </div>
+  </div>
+
+  <!-- Boxing / Running Men -->
+  <div>
+    <div class="sub-h">🥊 Boxing, Basketball & Running — Men</div>
+    <div class="pg pg4">
+      <div class="pc pc-h260"><div class="pc-img"><img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=500&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-n">NEW</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">BOXING</div><div class="pc-name">Venum Challenger Boxing Gloves</div><div class="pc-brand">Venum</div><div class="pc-rat"><span class="stars">★★★★☆</span><span class="rc">(178)</span></div><div class="pc-price"><span class="p-cur">₹3,999</span><span class="p-old">₹5,500</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h260"><div class="pc-img"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-p">PRO</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">BASKETBALL</div><div class="pc-name">Nike LeBron 21 Basketball Shoes</div><div class="pc-brand">Nike</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(156)</span></div><div class="pc-price"><span class="p-cur">₹18,999</span><span class="p-old">₹24,000</span><span class="p-save">21% OFF</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h260"><div class="pc-img"><img src="https://images.unsplash.com/photo-1595435742656-5272d0b3fa82?w=500&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-s">SALE</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">RUNNING</div><div class="pc-name">Nike Pegasus 40 Men's</div><div class="pc-brand">Nike</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(334)</span></div><div class="pc-price"><span class="p-cur">₹9,499</span><span class="p-old">₹12,000</span><span class="p-save">21% OFF</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h260"><div class="pc-img"><img src="https://images.unsplash.com/photo-1589487391730-58f20eb2c308?w=500&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-b">BESTSELLER</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">HOCKEY</div><div class="pc-name">Grays GX 3000 Hockey Stick</div><div class="pc-brand">Grays</div><div class="pc-rat"><span class="stars">★★★★☆</span><span class="rc">(112)</span></div><div class="pc-price"><span class="p-cur">₹3,299</span><span class="p-old">₹4,200</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- BRANDS -->
+<div class="brands-sec" id="brands">
+  <div class="brands-in">
+    <div class="brands-ttl">Official Partner Brands</div>
+    <div class="bg"><div class="bb"><div class="bb-n">NIKE</div></div><div class="bb"><div class="bb-n">ADIDAS</div></div><div class="bb"><div class="bb-n">PUMA</div></div><div class="bb"><div class="bb-n">YONEX</div></div><div class="bb"><div class="bb-n">WILSON</div></div><div class="bb"><div class="bb-n">SPEEDO</div></div></div>
+    <div class="bg" style="margin-top:1px;"><div class="bb"><div class="bb-n">SG SPORTS</div></div><div class="bb"><div class="bb-n">KOOKABURRA</div></div><div class="bb"><div class="bb-n">NIVIA</div></div><div class="bb"><div class="bb-n">EVERLAST</div></div><div class="bb"><div class="bb-n">REEBOK</div></div><div class="bb"><div class="bb-n">SPALDING</div></div></div>
+  </div>
+</div>
+
+<!-- ============ WOMEN'S SECTION ============ -->
+<section id="womens" style="background:var(--off);">
+<div class="sec">
+  <div class="gh">
+    <div class="gi gi-f"><span style="color:#fff;font-size:30px;">♀</span></div>
+    <div><div class="gh-lbl">Performance Meets Style</div><div class="gh-t female">WOMEN'S SPORTS COLLECTION</div></div>
+  </div>
+
+  <!-- Running Women -->
+  <div style="margin-bottom:52px;">
+    <div class="sub-h female" style="border-left-color:var(--pink);">👟 Running & Athletics — Women</div>
+    <div class="pg pg5">
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-b">BESTSELLER</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">RUNNING</div><div class="pc-name">Nike React Infinity Women's</div><div class="pc-brand">Nike</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(512)</span></div><div class="pc-price"><span class="p-cur">₹10,999</span><span class="p-old">₹14,000</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1595435742656-5272d0b3fa82?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-n">NEW</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">ATHLETICS</div><div class="pc-name">Adidas Sprintstar Women Spikes</div><div class="pc-brand">Adidas</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(87)</span></div><div class="pc-price"><span class="p-cur">₹6,499</span><span class="p-old">₹8,500</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1527926535775-15e54f64c641?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-b">POPULAR</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">RUNNING</div><div class="pc-name">Nike Swoosh Sports Bra</div><div class="pc-brand">Nike</div><div class="pc-rat"><span class="stars">★★★★☆</span><span class="rc">(334)</span></div><div class="pc-price"><span class="p-cur">₹2,499</span><span class="p-old">₹3,200</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-s">SALE</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">RUNNING</div><div class="pc-name">Adidas Techfit Tights Women</div><div class="pc-brand">Adidas</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(267)</span></div><div class="pc-price"><span class="p-cur">₹1,999</span><span class="p-old">₹2,800</span><span class="p-save">29% OFF</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">RUNNING</div><div class="pc-name">Women's Running Armband</div><div class="pc-brand">Decathlon</div><div class="pc-rat"><span class="stars">★★★★☆</span><span class="rc">(145)</span></div><div class="pc-price"><span class="p-cur">₹499</span><span class="p-old">₹799</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+    </div>
+  </div>
+
+  <!-- Yoga Women -->
+  <div style="margin-bottom:52px;">
+    <div class="sub-h female" style="border-left-color:var(--pink);">🧘 Yoga & Pilates — Women</div>
+    <div class="pg pg4">
+      <div class="pc pc-h260"><div class="pc-img"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-b">BESTSELLER</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">YOGA</div><div class="pc-name">Liforme Original Yoga Mat</div><div class="pc-brand">Liforme</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(678)</span></div><div class="pc-price"><span class="p-cur">₹4,999</span><span class="p-old">₹6,500</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h260"><div class="pc-img"><img src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=500&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-n">NEW</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">YOGA</div><div class="pc-name">Yoga Block + Strap Combo</div><div class="pc-brand">Boldfit</div><div class="pc-rat"><span class="stars">★★★★☆</span><span class="rc">(234)</span></div><div class="pc-price"><span class="p-cur">₹699</span><span class="p-old">₹1,099</span><span class="p-save">36% OFF</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h260"><div class="pc-img"><img src="https://images.unsplash.com/photo-1588286840104-8957b019727f?w=500&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-p">PREMIUM</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">YOGA</div><div class="pc-name">Lululemon Align Leggings</div><div class="pc-brand">Lululemon</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(892)</span></div><div class="pc-price"><span class="p-cur">₹7,999</span><span class="p-old">₹9,500</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h260"><div class="pc-img"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-s">SALE</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">YOGA / RECOVERY</div><div class="pc-name">High Density Foam Roller</div><div class="pc-brand">Decathlon</div><div class="pc-rat"><span class="stars">★★★★☆</span><span class="rc">(156)</span></div><div class="pc-price"><span class="p-cur">₹1,299</span><span class="p-old">₹1,800</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+    </div>
+  </div>
+
+  <!-- Badminton / Tennis Women -->
+  <div style="margin-bottom:52px;">
+    <div class="sub-h female" style="border-left-color:var(--pink);">🏸 Badminton, Tennis & Swimming — Women</div>
+    <div class="pg pg5">
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-b">BESTSELLER</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">BADMINTON</div><div class="pc-name">Yonex Nanoflare 700 Women</div><div class="pc-brand">Yonex</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(267)</span></div><div class="pc-price"><span class="p-cur">₹8,499</span><span class="p-old">₹10,500</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-p">PRO</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">TENNIS</div><div class="pc-name">Babolat Pure Drive Women</div><div class="pc-brand">Babolat</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(189)</span></div><div class="pc-price"><span class="p-cur">₹11,999</span><span class="p-old">₹14,000</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1589487391730-58f20eb2c308?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-n">NEW</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">TENNIS</div><div class="pc-name">Nike Court Advantage Tennis Dress</div><div class="pc-brand">Nike</div><div class="pc-rat"><span class="stars">★★★★☆</span><span class="rc">(98)</span></div><div class="pc-price"><span class="p-cur">₹3,499</span><span class="p-old">₹4,500</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1600679472829-3044539ce8ed?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-s">SALE</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">SWIMMING</div><div class="pc-name">Speedo Fastskin Swimsuit Women</div><div class="pc-brand">Speedo</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(223)</span></div><div class="pc-price"><span class="p-cur">₹3,799</span><span class="p-old">₹5,000</span><span class="p-save">24% OFF</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h220"><div class="pc-img"><img src="https://images.unsplash.com/photo-1551958219-acbc595b5ec9?w=400&q=80&auto=format&fit=crop" alt=""/><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">BADMINTON</div><div class="pc-name">Victor SHW-920 Women Shoes</div><div class="pc-brand">Victor</div><div class="pc-rat"><span class="stars">★★★★☆</span><span class="rc">(134)</span></div><div class="pc-price"><span class="p-cur">₹4,299</span><span class="p-old">₹5,500</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+    </div>
+  </div>
+
+  <!-- Gym Women -->
+  <div>
+    <div class="sub-h female" style="border-left-color:var(--pink);">💪 Gym & Fitness — Women</div>
+    <div class="pg pg4">
+      <div class="pc pc-h260"><div class="pc-img"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=500&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-b">BESTSELLER</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">GYM & FITNESS</div><div class="pc-name">Women Adjustable Dumbbell Set</div><div class="pc-brand">Kore Fitness</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(312)</span></div><div class="pc-price"><span class="p-cur">₹1,999</span><span class="p-old">₹2,800</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h260"><div class="pc-img"><img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=500&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-n">NEW</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">FITNESS</div><div class="pc-name">Pro Speed Jump Rope Women</div><div class="pc-brand">Boldfit</div><div class="pc-rat"><span class="stars">★★★★☆</span><span class="rc">(189)</span></div><div class="pc-price"><span class="p-cur">₹799</span><span class="p-old">₹1,200</span><span class="p-save">33% OFF</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h260"><div class="pc-img"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-s">SALE</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">FITNESS</div><div class="pc-name">Resistance Hip Band Set Women</div><div class="pc-brand">RDX Sports</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(445)</span></div><div class="pc-price"><span class="p-cur">₹599</span><span class="p-old">₹999</span><span class="p-save">40% OFF</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+      <div class="pc pc-h260"><div class="pc-img"><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500&q=80&auto=format&fit=crop" alt=""/><div class="pbadges"><span class="pb pb-p">PREMIUM</span></div><div class="pc-acts"><button class="pa">♡</button></div></div><div class="pc-info"><div class="pc-sport">FITNESS / PILATES</div><div class="pc-name">Anti-Burst Stability Ball 65cm</div><div class="pc-brand">Decathlon</div><div class="pc-rat"><span class="stars">★★★★★</span><span class="rc">(267)</span></div><div class="pc-price"><span class="p-cur">₹1,299</span><span class="p-old">₹1,800</span></div><button class="pc-atc" onclick="atc()">ADD TO CART</button></div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<div class="testi-sec">
+  <div class="testi-in">
+    <div style="text-align:center;margin-bottom:44px;">
+      <div style="font-size:9.5px;letter-spacing:5px;color:var(--red);font-weight:700;text-transform:uppercase;margin-bottom:10px;">What Athletes Say</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:46px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:-1px;">CUSTOMER <span style="color:var(--red);">REVIEWS</span></div>
+    </div>
+    <div class="tg">
+      <div class="tc"><div class="t-stars">★★★★★</div><div class="t-txt">"I've been buying all my cricket gear from Sabharwal for 8 years. Their SG bats are always genuine and delivery is fast. Best sports store in Punjab!"</div><div class="t-auth"><div class="t-av"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80&auto=format&fit=crop&crop=face" alt=""/></div><div><div class="t-name">Rajveer Singh</div><div class="t-sport">🏏 Cricket — State Level</div></div></div></div>
+      <div class="tc"><div class="t-stars">★★★★★</div><div class="t-txt">"Finally a sports store that understands women athletes! The yoga and running section is incredible. Got my Lululemon leggings at a great price with authentic warranty."</div><div class="t-auth"><div class="t-av"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80&auto=format&fit=crop&crop=face" alt=""/></div><div><div class="t-name">Priya Sharma</div><div class="t-sport">🧘 Yoga & Marathon Runner</div></div></div></div>
+      <div class="tc"><div class="t-stars">★★★★☆</div><div class="t-txt">"The Yonex rackets here are 100% genuine. Sabharwal Sports always has better quality and genuine products at competitive prices compared to any other shop."</div><div class="t-auth"><div class="t-av"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80&auto=format&fit=crop&crop=face" alt=""/></div><div><div class="t-name">Arjun Mehta</div><div class="t-sport">🏸 Badminton District Champion</div></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="nl-sec">
+  <div class="nl-in">
+    <div class="nl-ey">Get Exclusive Deals</div>
+    <div class="nl-t">JOIN THE<br/>CHAMPIONS CLUB</div>
+    <div class="nl-d">Subscribe and get 15% off your first order, early access to new arrivals, and exclusive deals on premium sports equipment.</div>
+    <div class="nl-form">
+      <input type="email" class="nl-inp" placeholder="Enter your email address..."/>
+      <button class="nl-btn" onclick="toast('🎉 Welcome! 15% OFF code sent to your email!')">SUBSCRIBE</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-in">
+    <div class="ft-top">
+      <div>
+        <div class="ft-bn">Sabharwal Sports</div>
+        <div class="ft-bsub">Premium Equipment Since 1987</div>
+        <div class="ft-desc">India's most trusted sports equipment retailer. Serving athletes from grassroots to national level with 100% genuine products from 35+ premium brands. Established in Chandigarh.</div>
+        <div class="soc"><div class="sb">📘</div><div class="sb">📸</div><div class="sb">🐦</div><div class="sb">▶️</div></div>
+      </div>
+      <div>
+        <div class="ft-ct">Sport Categories</div>
+        <div class="ft-lk"><a>Cricket Equipment</a><a>Football & Soccer</a><a>Badminton</a><a>Tennis</a><a>Swimming</a><a>Gym & Fitness</a><a>Basketball</a><a>Boxing & MMA</a><a>Yoga & Pilates</a><a>Running & Athletics</a></div>
+      </div>
+      <div>
+        <div class="ft-ct">Shop By Gender</div>
+        <div class="ft-lk"><a>Men's Cricket Gear</a><a>Men's Football</a><a>Men's Running</a><a>Men's Gym Fitness</a><a>Men's Badminton</a><a>Women's Running</a><a>Women's Yoga</a><a>Women's Badminton</a><a>Women's Tennis</a><a>Women's Fitness</a></div>
+      </div>
+      <div>
+        <div class="ft-ct">Customer Service</div>
+        <div class="ft-lk"><a>Track Your Order</a><a>Returns & Exchanges</a><a>Size Guide</a><a>Product Authentication</a><a>Bulk Team Orders</a><a>Loyalty Programme</a><a>Gift Cards</a><a>Contact Us</a></div>
+        <div style="margin-top:22px;padding:14px;background:var(--border-dark);border-left:3px solid var(--red);">
+          <div style="font-size:8px;letter-spacing:3px;color:rgba(255,255,255,.28);margin-bottom:5px;text-transform:uppercase;">Call Us</div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:700;color:#fff;">+91 98765 43210</div>
+          <div style="font-size:9.5px;color:rgba(255,255,255,.28);margin-top:3px;">Mon–Sat 9AM–8PM</div>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <span>© 2024 Sabharwal Sports Pvt. Ltd. All Rights Reserved. | Est. 1987, Chandigarh, India</span>
+      <div class="ft-bot-r"><span>Privacy Policy</span><span>Terms of Service</span><span>Sitemap</span></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+let cart=0;
+function atc(){cart++;document.getElementById('ccount').textContent=cart;toast('✅ Added to cart!');}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600);}
+
+// Timer
+let secs=8*3600+45*60+30;
+function tick(){const h=Math.floor(secs/3600),m=Math.floor((secs%3600)/60),s=secs%60;document.getElementById('th').textContent=String(h).padStart(2,'0');document.getElementById('tm').textContent=String(m).padStart(2,'0');document.getElementById('ts').textContent=String(s).padStart(2,'0');if(secs>0)secs--;}
+setInterval(tick,1000);tick();
+
+// Filter bestsellers
+function filt(cat,btn){
+  document.querySelectorAll('#bsellers .pc').forEach(c=>{c.style.display=(cat==='all'||c.dataset.c===cat)?'':'none';});
+  btn.closest('.sh-r').querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// Filter category tabs
+document.querySelectorAll('.fb').forEach(b=>{
+  b.addEventListener('click',function(){
+    const p=this.parentElement;
+    if(p)p.querySelectorAll('.fb').forEach(x=>x.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ATC all product buttons
+document.querySelectorAll('.pc-atc').forEach(b=>{
+  b.addEventListener('click',function(e){e.stopPropagation();atc();});
+});
+</script>
+</body>
+</html>
